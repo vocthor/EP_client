@@ -1,0 +1,17 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Form input {
+  margin: 10px;
+}
+.Form button {
+  width: 70px;
+  height: 30px;
+  margin-top: 10px;
+}
+.Form button:hover {
+  cursor: pointer;
+}
