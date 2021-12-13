@@ -1,7 +1,7 @@
 import Calendar from "../components/Calendar";
 import Navigation from "../components/Navigation";
 import Weather from "../components/Weather";
-import weather from "../components/Weather";
+import Menu from "../components/Menu"
 
 const Home = () => {
   return (
@@ -9,6 +9,7 @@ const Home = () => {
       <Navigation />
       <Calendar />
       <Weather />
+      <Menu /> 
     </div>
   );
 };
