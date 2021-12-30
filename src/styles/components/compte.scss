@@ -1,15 +1,38 @@
-.Form {
+.FormRegister {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.FormLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+.Connected {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+.Connected button {
+  width: 100px;
+  height: 50px;
+  margin-top: 50px;
+}
+.Connected button:hover {
+  cursor: pointer;
+}
 .Form input {
   margin: 10px;
 }
 .Form button {
-  width: 70px;
-  height: 30px;
+  width: 80px;
+  height: 45px;
   margin-top: 10px;
 }
 .Form button:hover {
