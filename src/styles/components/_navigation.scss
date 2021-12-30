@@ -1,6 +1,7 @@
 .navigation {
   margin: 26px 0;
   display: flex;
+  position: relative;
 
   a {
     margin: 10px;
@@ -18,5 +19,18 @@
       left: 50%;
       transform: translateX(-50%);
     }
+  }
+
+  .Loginfo {
+    right: -40%;
+    width: 50%;
+    display: flex;
+    position: relative;
+  }
+  h4,
+  button {
+    margin: 10px;
+    padding: 10px;
+    position: relative;
   }
 }
