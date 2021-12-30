@@ -4,9 +4,6 @@ import axios from "axios";
 import CurrentWeather from "./weather/currentWeather";
 import WeekWeather from "./weather/weekWeather";
 
-
-
-
 export default function Weather() {
   //Coordonnees de l'INSA de Rennes
   const LAT = 48.122359;
@@ -14,7 +11,6 @@ export default function Weather() {
   const CLEAPI = "6bde72fe96278730666f380e0b3610f6";
   const URLAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${LAT}&lon=${LONG}&exclude=minutely&lang=fr&units=metric&appid=${CLEAPI}`;
 
-  const [location, setLocation] = useState(); //si on veut mettre la geolocalisation ?
   const [loading, setLoading] = useState(true);
 
   const [resultatAPI, setResultatAPI] = useState();
@@ -37,6 +33,7 @@ export default function Weather() {
       };
 
       fetchWeather();
+      //console.log(resultatAPI);
     },
     [
       //Condition de changement pr MaJ
@@ -59,7 +56,7 @@ export default function Weather() {
     <div className="weather">
       <h1>Météo</h1>
       <CurrentWeather data={resultatAPI?.current} />
-      <WeekWeather forecast={resultatAPI?.daily} />
+      <WeekWeather data={resultatAPI?.daily} />
     </div>
   );
 }
