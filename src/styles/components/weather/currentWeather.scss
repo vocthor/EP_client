@@ -1,12 +1,27 @@
 .currentWeather {
   margin: 0px auto;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  margin: 0px auto;
   background-color: #c8dbfe;
   padding: 8px;
   border-radius: 20px;
+}
+
+.hourCards {
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.hourWeather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  height: 100px;
+  width: 100px;
 }

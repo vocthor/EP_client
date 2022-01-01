@@ -55,7 +55,7 @@ export default function Weather() {
   return (
     <div className="weather">
       <h1>Météo</h1>
-      <CurrentWeather data={resultatAPI?.current} />
+      <CurrentWeather data={resultatAPI?.hourly} />
       <WeekWeather data={resultatAPI?.daily} />
     </div>
   );

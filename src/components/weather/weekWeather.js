@@ -8,12 +8,12 @@ import "../../styles/components/weather/weekWeather.scss";
 const getIcon = (icon) => `http://openweathermap.org/img/wn/${icon}@4x.png`;
 
 export default function WeekWeather({ data }) {
-  const [forecast, setForecast] = useState([]);
+  const [forecastWeather, setForecast] = useState([]);
 
   //Mise en forme de la data en un tableau forecast
   //Attention, data est deja un tableau (@see Weather.js)
   useEffect(() => {
-    const forecastData = data.map((f) => {
+    const forecastData = data?.map((f) => {
       const dt = new Date(f.dt * 1000);
       return {
         date: dt,
@@ -28,7 +28,7 @@ export default function WeekWeather({ data }) {
 
   return (
     <div className="weekWeather">
-      {forecast.map((f) => (
+      {forecastWeather.map((f) => (
         <div className="weekDays">
           <p className="name">{f?.name}</p>
           <img src={getIcon(f?.icon)} height="50" width="50" />
