@@ -8,23 +8,29 @@ import "../../styles/components/weather/weekWeather.scss";
 const getIcon = (icon) => `http://openweathermap.org/img/wn/${icon}@4x.png`;
 
 export default function WeekWeather({ data }) {
+  //Tableau pr stocker le temps des (7) prochains jours
   const [forecastWeather, setForecast] = useState([]);
 
   //Mise en forme de la data en un tableau forecast
   //Attention, data est deja un tableau (@see Weather.js)
-  useEffect(() => {
-    const forecastData = data?.map((f) => {
-      const dt = new Date(f.dt * 1000);
-      return {
-        date: dt,
-        tempMor: Math.round(f.temp.morn),
-        tempEve: Math.round(f.temp.eve),
-        icon: f.weather[0].icon,
-        name: format(dt, "EEEE", { locale: fr }),
-      };
-    });
-    setForecast(forecastData);
-  }, [data]);
+  useEffect(
+    () => {
+      //On decoupe data pr recuperer les champs qui nous interessent
+      const forecastData = data?.map((f) => {
+        const dt = new Date(f.dt * 1000);
+        return {
+          date: dt,
+          tempMor: Math.round(f.temp.morn),
+          tempEve: Math.round(f.temp.eve),
+          icon: f.weather[0].icon,
+          name: format(dt, "EEEE", { locale: fr }),
+        };
+      });
+      setForecast(forecastData);
+    },
+    //useEffect se re-execute si data est modifiée
+    [data]
+  );
 
   return (
     <div className="weekWeather">

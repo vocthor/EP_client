@@ -8,11 +8,15 @@ export default function Weather() {
   //Coordonnees de l'INSA de Rennes
   const LAT = 48.122359;
   const LONG = -1.636877;
+  //Cle de OpenWeatherMap du compte de Vocthor
   const CLEAPI = "6bde72fe96278730666f380e0b3610f6";
+  //Lien API de OpenWeatherMap
   const URLAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${LAT}&lon=${LONG}&exclude=minutely&lang=fr&units=metric&appid=${CLEAPI}`;
 
+  //Var pr savoir si la page est en train de charger
   const [loading, setLoading] = useState(true);
 
+  //Var pr stocker les valeurs de l API
   const [resultatAPI, setResultatAPI] = useState();
 
   useEffect(
@@ -27,19 +31,21 @@ export default function Weather() {
           setResultatAPI(res.data);
           setLoading(false);
         } catch (err) {
-          // faudra mieux catch les erreurs notamment la 429
+          // faudra mieux catch les erreurs
           console.error(err);
         }
       };
 
       fetchWeather();
-      //console.log(resultatAPI);
     },
     [
       //Condition de changement pr MaJ
     ]
   );
 
+  /**
+   * Si la page est en train de charger
+  */
   if (loading) {
     return (
       // faudra mettre un logo de chargement
