@@ -5,8 +5,26 @@ import Plan from "./pages/Plan";
 import SallesTP from "./pages/SallesTP";
 import Annonces from "./pages/Annonces";
 import Compte from "./pages/Compte";
+import { useState } from "react";
+import Axios from "axios";
 
 function App() {
+  // Toute cette merde est un essai que j'avais fait, je reprends ça plus tard
+  /*const [id, setId] = useState("");
+
+  const connect = () => {
+    Axios.post("http://localhost:3001/getUser", { id: id }).then((response) =>
+      console.log(response.data)
+    );
+  };
+
+  const connection = () => {
+    // pour essayer une connection
+    setId(2);
+    connect();
+  };
+  setInterval(connection, 10000); // pour récupérer l'id dans le fichier texte (dans le futur) et tester si connection possible
+*/
   return (
     <BrowserRouter>
       <Switch>

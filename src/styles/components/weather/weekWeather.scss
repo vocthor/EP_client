@@ -1,0 +1,23 @@
+.weekWeather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.weekDays {
+  background-color: #c8dbfe;
+  height: 150px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.temp {
+  font-size: 18px;
+  font-weight: bolder;
+}
