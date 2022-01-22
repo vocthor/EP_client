@@ -3,16 +3,17 @@
   margin: 20px;
   border: 3px solid $color-3;
   border-radius: 30px;
-  height: 530px;
-  width: 1000px;
+  height: fit-content;
+  width: fit-content;
   background-color: white;
-  h1 {
+  align-items: center;
+  .h1 {
     text-align: center;
     margin-bottom: 10px;
   }
-  img {
+  .iframe {
     margin-left: auto;
     margin-right: auto;
-    display: block;
+    display: flex;
   }
 }
