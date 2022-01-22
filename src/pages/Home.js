@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import Calendar from "../components/Calendar";
 import Navigation from "../components/Navigation";
 import Weather from "../components/Weather";
+import Menu from "../components/Menu"
 import { useHistory } from "react-router-dom";
 import Axios from "axios";
+
 
 const Home = ({}) => {
   const [authState, setAuthState] = useState(false);
@@ -36,6 +38,7 @@ const Home = ({}) => {
       <Navigation />
       {authState ? <Calendar /> : ""}
       <Weather />
+      <Menu /> 
     </div>
   );
 };
