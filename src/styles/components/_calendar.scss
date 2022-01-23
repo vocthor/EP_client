@@ -1,19 +1,40 @@
+
+:root{
+  //Var a modifier pr gerer le zoom
+  --zoom-factor: 0.75;
+  --init-frame-height : 870px;
+  --init-frame-width : 1555px;
+
+  /* 
+  Pour recalibrer :
+  - mettre le zoom a 1,
+  - jouer avec --init-frame-height / width 
+  */
+}
+
 .calendar {
   padding: 10px;
   margin: 20px;
   border: 3px solid $color-3;
   border-radius: 30px;
-  height: fit-content;
-  width: fit-content;
+  height: calc(100px + var(--init-frame-height) * var(--zoom-factor));
+  width: calc(30px + var(--init-frame-width) * var(--zoom-factor));
   background-color: white;
-  align-items: center;
-  .h1 {
+  h1 {
     text-align: center;
     margin-bottom: 10px;
   }
-  .iframe {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-  }
+}
+
+.IframeADE {
+  //Bonnes dimensions pr zoom==1
+  height: var(--init-frame-height);
+  width: var(--init-frame-width);
+
+  transform: scale(var(--zoom-factor));
+  transform-origin: top left;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  background-color: whitesmoke;
 }
