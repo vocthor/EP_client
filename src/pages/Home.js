@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Calendar from "../components/Calendar";
 import Navigation from "../components/Navigation";
 import Weather from "../components/Weather";
-import { useState , useEffect } from "react";
 import Menu from "../components/Menu"
 import Axios from "axios";
 
