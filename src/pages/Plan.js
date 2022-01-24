@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="plan">
       <Navigation />
-      <img src="../planinsa.jpg" alt="Plan de l'insa" height="550" />
+      <img src="../../planinsa.jpg" alt="Plan de l'insa" height="550" />
     </div>
   );
 };
