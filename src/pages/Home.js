@@ -1,12 +1,15 @@
+import React, { useState, useEffect } from "react";
 import Calendar from "../components/Calendar";
 import Navigation from "../components/Navigation";
 import Weather from "../components/Weather";
 import { useState , useEffect } from "react";
+import Menu from "../components/Menu"
 import Axios from "axios";
 
 const Home = ({}) => {
   const [authState, setAuthState] = useState(false);
   const [pseudo, setPseudo] = useState("");
+
 
   /*  Permets de savoir s'il y a un user connecté au chargement de la page et donc de 
   définir les constantes qui seront necessaires dans l'affichage */
@@ -33,6 +36,7 @@ const Home = ({}) => {
       <Navigation />
       {authState ? <Calendar pseudo={pseudo} /> : ""}
       <Weather />
+      <Menu /> 
     </div>
   );
 };

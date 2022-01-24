@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default function Calendar({ pseudo }) {
   
   //URL de monADE selon le pseudo
@@ -21,4 +22,3 @@ Il n'est pas possible de redimensionner automatiquement le iframe selon son cont
 }
 
 //ancien (deprecated) : src="http://applisjava.insa-rennes.fr/MonAde6Image/html/images_ade/HugoLAMOUREUX5413.gif"
-
