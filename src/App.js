@@ -5,8 +5,6 @@ import Plan from "./pages/Plan";
 import SallesTP from "./pages/SallesTP";
 import Annonces from "./pages/Annonces";
 import Compte from "./pages/Compte";
-import { useState } from "react";
-import Axios from "axios";
 
 function App() {
   // Toute cette merde est un essai que j'avais fait, je reprends ça plus tard
