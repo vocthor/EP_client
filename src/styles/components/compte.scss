@@ -11,6 +11,7 @@
   align-items: center;
   padding-bottom: 40px;
 }
+
 .Connected {
   display: flex;
   flex-direction: column;
@@ -25,6 +26,22 @@
   margin-top: 50px;
 }
 .Connected button:hover {
+  cursor: pointer;
+}
+.Retour {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.Retour button {
+  width: 150px;
+  height: 50px;
+  margin: 5px;
+}
+.Retour button:hover {
   cursor: pointer;
 }
 .Form input {
