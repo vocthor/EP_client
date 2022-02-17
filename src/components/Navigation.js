@@ -102,9 +102,13 @@ const Navigation = () => {
       <NavLink exact to="/salles-tp" activeClassName="nav-active">
         Salles de TP
       </NavLink>
-      <NavLink exact to="/annonces" activeClassName="nav-active">
-        Annonces
-      </NavLink>
+      {authState ? (
+        <NavLink exact to="/annonces" activeClassName="nav-active">
+          Annonces
+        </NavLink>
+      ) : (
+        ""
+      )}
       {authState ? (
         <div className="Loginfo">
           <h4>
