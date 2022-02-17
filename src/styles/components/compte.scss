@@ -44,14 +44,20 @@
 .Retour button:hover {
   cursor: pointer;
 }
-.Form input {
-  margin: 10px;
-}
-.Form button {
-  width: 80px;
-  height: 45px;
-  margin-top: 10px;
-}
-.Form button:hover {
-  cursor: pointer;
+.Form {
+  button {
+    width: 80px;
+    height: 45px;
+    margin-top: 10px;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  input {
+    margin: 10px;
+  }
+  h4 {
+    margin: 10px;
+    color: red;
+  }
 }
