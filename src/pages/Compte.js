@@ -7,12 +7,14 @@ const Compte = () => {
   const [prenom, setPrenom] = useState("");
   const [pseudo, setPseudo] = useState("");
   const [id, setId] = useState("");
+  const [validFields, setValidFields] = useState(true);
   const [user, setUser] = useState({});
   let history = useHistory();
 
   /* Fonction déclenchée lorsqu'on valide la création d'un compte, elle permets d'ajouter ce qui est rentré
   par l'utilisateur dans les champs directement dans la base de données donc elle crée un utilisateur*/
   const addUser = () => {
+    let valid = true;
     Axios.post("http://localhost:3001/create", {
       id: id,
       prenom: prenom,
@@ -20,13 +22,21 @@ const Compte = () => {
       pseudo: pseudo,
     })
       .then((res) => {
-        console.log("success");
+        if (res.data == "Invalid fields") {
+          setValidFields(false);
+          valid = false; // je n'utilise pas validFields car sinon il y a un bug au premier déclenchement et pas arpes je ne sais pas pourquoi
+        } else {
+          setValidFields(true);
+          valid = true;
+        }
       })
       .then(() => {
-        document.getElementById("prenom").value = "";
-        document.getElementById("nom").value = "";
-        document.getElementById("pseudo").value = "";
-        login();
+        if (valid) {
+          document.getElementById("prenom").value = "";
+          document.getElementById("nom").value = "";
+          document.getElementById("pseudo").value = "";
+          login();
+        }
       });
   };
 
@@ -96,12 +106,12 @@ const Compte = () => {
         </div>
       ) : (
         <div className="Form">
-          <div className="FormLogin">
+          {/* { <div className="FormLogin">
             <h1>Se connecter</h1>
             <label>Id:</label>
             <input type="text" onChange={(e) => setId(e.target.value)} />
             <button onClick={login}>Se connecter</button>
-          </div>
+          </div> } */}
           <div className="FormRegister">
             <h1>Créer un Compte</h1>
             <label>Prenom:</label>
@@ -123,6 +133,11 @@ const Compte = () => {
               onChange={(e) => setPseudo(e.target.value)}
             />
             <button onClick={addUser}>Valider</button>
+            {validFields ? (
+              ""
+            ) : (
+              <h4> Veuillez remplir les champs correctement</h4>
+            )}
           </div>
         </div>
       )}
