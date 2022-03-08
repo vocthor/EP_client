@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import SalleTP from "../components/SalleTP";
+import Axios from "axios";
 
 const SallesTP = () => {
   const [salles, setSalles] = useState([]);
@@ -15,6 +16,16 @@ const SallesTP = () => {
     ]);
   }, []);
 
+  const RecupTPBack = () => {
+    Axios.post("http://localhost:3001/SallesTpLibres").then((res) => {
+      if (res.data.error) {
+        alert(res.data.error);
+      } else {
+        console.log(res);
+      }
+    });
+  };
+
   return (
     <div className="SallesTP">
       <Navigation />
@@ -23,6 +34,7 @@ const SallesTP = () => {
           <SalleTP key={salle.nom} salle={salle} />
         ))}
       </ul>
+      <button onClick={RecupTPBack}> Recup Data Back </button>
     </div>
   );
 };
