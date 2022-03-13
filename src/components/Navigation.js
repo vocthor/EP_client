@@ -113,9 +113,7 @@ const Navigation = () => {
           <button onClick={logout}>Se déconnecter</button>
         </div>
       ) : (
-        <NavLink exact to="/compte" activeClassName="nav-active">
-          Se connecter
-        </NavLink>
+        ""
       )}
     </div>
   );

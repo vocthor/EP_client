@@ -8,11 +8,10 @@ import moment from "moment";
 
 const SallesTP = () => {
   const [salles, setSalles] = useState([]);
-  const [listeCours, setListeCours] = useState([]);
-  const [finish, setFinish] = useState(false);
-  const [items, setItems] = useState([]);
   let items2 = [];
+  let listeCours = [];
 
+  /* Lignes de la timeline */
   const groups = [
     { id: 1, title: "INF-ECHIQUIER" },
     { id: 2, title: "INF-EAUX : 118" },
@@ -36,6 +35,7 @@ const SallesTP = () => {
     RecupTPBack();
   }, []);
 
+  /* Ajoute les cours dans le bon format dans items2 pour l'affichage */
   const TraitementBack = () => {
     let ajout, match;
     for (let i = 1; i < listeCours.length; i++) {
@@ -51,6 +51,7 @@ const SallesTP = () => {
       if (listeCours[i].location.includes("INF-008")) ajout.group = 8;
 
       ajout.title = listeCours[i].summary;
+      /* Conversion des dates dans le bon format */
       match = listeCours[i].dtstart.match(
         /^(\d{4})(\d\d)(\d\d)T(\d\d)(\d\d)(\d\d)/
       );
@@ -75,9 +76,6 @@ const SallesTP = () => {
       );
       items2[i - 1] = ajout;
     }
-    setItems(items2);
-    console.log("Fin traitement " + items.length);
-    console.log(items);
   };
 
   const RecupTPBack = () => {
@@ -85,18 +83,10 @@ const SallesTP = () => {
       if (res.data.error) {
         alert(res.data.error);
       } else {
-        console.log(res);
-        setListeCours(res.data);
-        console.log(listeCours.length);
+        listeCours = res.data;
         TraitementBack();
       }
     });
-  };
-
-  const setf = () => {
-    console.log(items);
-    console.log(listeCours);
-    setFinish(true);
   };
 
   return (
@@ -107,19 +97,16 @@ const SallesTP = () => {
           <SalleTP key={salle.nom} salle={salle} />
         ))}
       </ul> */}
-      {finish ? (
+      {
         <Timeline
           groups={groups}
-          items={items}
+          items={items2}
           defaultTimeStart={moment().add(-1, "hour")}
           defaultTimeEnd={moment().add(7, "hour")}
           sidebarWidth={180}
         />
-      ) : (
-        <p>Chargement</p>
-      )}
-      <button onClick={RecupTPBack}> Recup Data Back </button>
-      <button onClick={setf}> Calendar </button>
+      }
+      {/* <button onClick={RecupTPBack}> Recup Data Back </button> */}
     </div>
   );
 };
