@@ -53,7 +53,7 @@ export default function Annonces() {
     e.preventDefault();
     // Objet contenant les caractéristiques de l'annonce
     const newAnnonce = {
-      id: (new Date().getTime() * 60000) % 10080, //10080 = nb minute en 7 jours
+      id: Math.random() * 10080, //10080 = nb minute en 7 jours
       text: input,
       ownerID: id,
       ownerName: prenom + " " + nom,
@@ -69,21 +69,21 @@ export default function Annonces() {
    * @param {*} annonce à ajouter
    */
   const sendToBackEnd = (annonce) => {
-    let valid = true;
     Axios.post("http://localhost:3001/addAnnonce", {
       id_annonce: annonce.id,
       id_owner: annonce.ownerID,
       text: annonce.text,
       contact: annonce.contact,
-    }).then((res) => {
-      if (res.data != "Invalid fields") {
-        setValidFields(true);
-        valid = true; // je n'utilise pas validFields car sinon il y a un bug au premier déclenchement et pas arpes je ne sais pas pourquoi
-      } else {
-        setValidFields(false);
-        valid = false;
-      }
-    });
+    })
+      .then((res) => {
+        console.log(res);
+        if (res.data !== "Invalid fields") {
+          setValidFields(true);
+        } else {
+          setValidFields(false);
+        }
+      })
+      .then(() => askBackEnd());
   };
 
   /**
@@ -91,18 +91,37 @@ export default function Annonces() {
    */
   const askBackEnd = () => {
     Axios.post("http://localhost:3001/updateAnnonces").then((res) => {
-      const newList = res.data
-        .map((e) => {
-          return {
-            id: e["id_annonce"],
-            text: e["annonce"],
-            ownerID: e["id_owner"],
-            ownerName: "",
-            contact: e["contact"],
-          };
-        })
-        setAnnonceList(newList);
+      const newList = res.data.map((e) => {
+        return {
+          id: e["id_annonce"],
+          text: e["annonce"],
+          ownerID: e["id_owner"],
+          ownerName: e["nom"] + " " + e["prenom"],
+          contact: e["contact"],
+        };
+      });
+      setAnnonceList(newList);
     });
+  };
+
+  /**
+   * Fonction pour supprimer une annonce si on en est le propriétaire
+   * @param {*} annonce
+   */
+  const deleteAnnonce = (annonce) => {
+    Axios.post("http://localhost:3001/deleteAnnonce", {
+      id_annonce: annonce.id,
+      id_owner: annonce.ownerID,
+    })
+      .then((res) => {
+        console.log(res);
+        if (res.data !== "Invalid fields") {
+          setValidFields(true);
+        } else {
+          setValidFields(false);
+        }
+      })
+      .then(() => askBackEnd());
   };
 
   /* Si l'utilisateur n'est pas connecté mais est quand-même arrivé sur cette pages, on le lui dis gentiment.*/
@@ -136,8 +155,14 @@ export default function Annonces() {
         </button>
       </form>
       {annonceList.map((a) => (
-        <div key={a.id}>
-          {a.ownerName} : {a.text}
+        <div className="annonce" key={a.id}>
+          <div className="annonceOwnerName">{a.ownerName} :</div>
+          <div className="annonceText">{a.text}</div>
+          <div className="annonceDelete">
+            {a.ownerID === "" + id ? (
+              <button onClick={() => deleteAnnonce(a)}>Supprimer</button>
+            ) : ""}
+          </div>
         </div>
       ))}
     </div>
