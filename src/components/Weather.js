@@ -45,7 +45,7 @@ export default function Weather() {
 
   /**
    * Si la page est en train de charger
-  */
+   */
   if (loading) {
     return (
       // faudra mettre un logo de chargement
