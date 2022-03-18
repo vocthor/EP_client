@@ -4,13 +4,17 @@
   justify-content: space-evenly;
 }
 
+$color-1: #8d81fd;
+$color-2: #f9f9ed;
+
 .weekDays {
-  background-color: #c8dbfe;
+  background-color: $color-1;
   height: 150px;
   width: 120px;
   justify-content: center;
   align-items: center;
   margin-right: 10px;
+  margin-left: 10px;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
