@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Calendar from "../components/Calendar";
 import Navigation from "../components/Navigation";
 import Weather from "../components/Weather";
-import Menu from "../components/Menu";
 import Ephemeride from "../components/ephemeride/Ephemeride";
 import Axios from "axios";
 
@@ -36,7 +35,6 @@ const Home = ({}) => {
       <Ephemeride />
       {authState ? <Calendar pseudo={pseudo} /> : ""}
       <Weather />
-      <Menu />
     </div>
   );
 };
