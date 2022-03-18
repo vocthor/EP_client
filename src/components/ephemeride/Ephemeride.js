@@ -28,17 +28,6 @@ function phrase() {
   );
 }
 
-// function loadJson() {
-//   var requestURL = "https://nominis.cef.fr/json/saintdujour.php";
-//   var request = new XMLHttpRequest();
-//   request.open("GET", requestURL);
-//   request.responseType = "json";
-//   request.send();
-//   request.onload = function () {
-//     var data_json = request.response;
-//     console.log("Load ok : " + data_json.response.saintdujour.nom);
-//   };
-// }
 const Ephemeride = () => {
   return (
     <div className="ephemeride">
