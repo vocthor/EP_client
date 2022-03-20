@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import Axios from "axios";
 
+import "../styles/components/annonces.scss";
+
 export default function Annonces() {
   // Var pr stocker le corps de l'annonce en train d'être rentrée
   const [input, setInput] = useState("");
+  const [contact, setContact] = useState("");
+  const [count, setCount] = useState(0);
   // Var pr stocker la liste des annonces
   const [annonceList, setAnnonceList] = useState([]);
 
-  const [contact, setContact] = useState("");
   const [validFields, setValidFields] = useState(true);
 
   // Vars de l'authentification
@@ -38,7 +41,6 @@ export default function Annonces() {
       }
     });
   }, []);
-
   // Update lors d'un reload de la page
   useEffect(() => {
     askBackEnd();
@@ -53,7 +55,7 @@ export default function Annonces() {
     e.preventDefault();
     // Objet contenant les caractéristiques de l'annonce
     const newAnnonce = {
-      id: Math.random() * 10080, //10080 = nb minute en 7 jours
+      id: Math.round(Math.random() * 10080), //10080 = nb minute en 7 jours
       text: input,
       ownerID: id,
       ownerName: prenom + " " + nom,
@@ -62,6 +64,8 @@ export default function Annonces() {
     // On rajoute l'annonce à la liste, puis on RaZ l'input
     sendToBackEnd(newAnnonce);
     setInput("");
+    setContact("");
+    setCount(0);
   };
 
   /**
@@ -142,29 +146,50 @@ export default function Annonces() {
       <Navigation />
       <h1>Annonces</h1>
       <form className="annonce-form" onSubmit={handleSubmit}>
-        <input
+        <textarea
           type="text"
           placeholder="Quelle est votre annonce ?"
           value={input}
           name="text"
           className="annonce-input"
-          onChange={(e) => setInput(e.target.value)}
+          maxLength="150"
+          onChange={(e) => {
+            setInput(e.target.value);
+            setCount(e.target.value.length);
+          }}
         />
-        <button type="submit" className="annonce-addButton">
-          Ajouter
-        </button>
-      </form>
-      {annonceList.map((a) => (
-        <div className="annonce" key={a.id}>
-          <div className="annonceOwnerName">{a.ownerName} :</div>
-          <div className="annonceText">{a.text}</div>
-          <div className="annonceDelete">
-            {a.ownerID === "" + id ? (
-              <button onClick={() => deleteAnnonce(a)}>Supprimer</button>
-            ) : ""}
-          </div>
+        <div className="annonce-truc">
+          <span className="annonce-count">{count}/150</span>
+          <input
+            type="text"
+            placeholder="Comment vous contacter ?"
+            className="annonce-contact"
+            value={contact}
+            maxLength="45"
+            onChange={(e) => setContact(e.target.value)}
+          />
+          <button type="submit" className="annonce-addButton">
+            Ajouter
+          </button>
         </div>
-      ))}
+      </form>
+
+      <div className="annonceList">
+        {annonceList.map((a) => (
+          <div className="annonce" key={a.id}>
+            <div className="annonceOwnerName">{a.ownerName}</div>
+            <div className="annonceText">{a.text}</div>
+            <div className="annonceDelete">
+              {a.ownerID === id ? (
+                <button onClick={() => deleteAnnonce(a)}>Supprimer</button>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="annonceContact">{a.contact}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,86 @@
+// PB : J'ARRIVE PAS A IMPORT LES VAR
+
+.annonces {
+  justify-content: center;
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .annonce-form {
+    display: flex;
+    flex-direction: line;
+    .annonce-input {
+      height: 150px;
+      width: 250px;
+      border: 1px solid;
+      border-radius: 5px;
+      box-sizing: border-box;
+      padding: 5px;
+      resize: none;
+    }
+    .annonce-truc {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .annonce-count{
+        margin-left: 15px;
+      }
+      .annonce-contact {
+        margin-left: 15px;
+      }
+      .annonce-addButton {
+        margin-left: 15px;
+        height: 50px;
+        width: 100px;
+        position: absolute;
+        bottom: 0px;
+      }
+    }
+  }
+
+  .annonceList {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(5, minmax(250px, 1fr)); //merci Internet
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: 3px solid #282c34; // $color-3
+    border-radius: 30px;
+    height: auto;
+    width: 1336px; //trouvé a la mano
+    background-color: white;
+
+    .annonce {
+      position: relative;
+      padding: 5px;
+      background-color: #c8dbfe;
+      height: 250px;
+      width: 250px;
+      margin-right: 10px;
+      border-radius: 10px;
+
+      .annonceOwnerName {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .annonceText {
+        margin-left: 2px;
+      }
+      .annonceDelete {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        z-index: 1; // Mettre au 1° plan
+      }
+      .annonceContact {
+        position: absolute;
+        bottom : 5px;
+        left: 5px;
+        font-style: italic;
+      }
+    }
+  }
+}
