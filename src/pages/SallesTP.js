@@ -24,14 +24,6 @@ const SallesTP = () => {
   ];
 
   useEffect(() => {
-    // setSalles([
-    //   { nom: "INF-EAUX", estOccupe: true },
-    //   { nom: "INF-BORDEAUX", estOccupe: false },
-    //   { nom: "INF-ECHIQUIER", estOccupe: true },
-    //   { nom: "INF-PC1", estOccupe: false },
-    //   { nom: "INF-PC2", estOccupe: false },
-    //   { nom: "INF-PC3", estOccupe: true },
-    // ]);
     RecupTPBack();
   }, []);
 

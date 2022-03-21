@@ -107,6 +107,9 @@ const Navigation = () => {
       </NavLink>
       {authState ? (
         <div className="Loginfo">
+          <NavLink exact to="/monCompte" activeClassName="nav-active">
+            Mon Compte
+          </NavLink>
           <h4>
             {prenom} {nom}
           </h4>

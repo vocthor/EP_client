@@ -5,6 +5,7 @@ import Plan from "./pages/Plan";
 import SallesTP from "./pages/SallesTP";
 import Annonces from "./pages/Annonces";
 import Compte from "./pages/Compte";
+import ModifCompte from "./pages/ModifCompte";
 
 function App() {
   // Toute cette merde est un essai que j'avais fait, je reprends ça plus tard
@@ -31,6 +32,8 @@ function App() {
         <Route path="/salles-tp" exact component={SallesTP}></Route>
         <Route path="/annonces" exact component={Annonces}></Route>
         <Route path="/compte" exact component={Compte}></Route>
+        <Route path="/monCompte" exact component={ModifCompte}></Route>
+
         <Route component={NotFound}></Route>
       </Switch>
     </BrowserRouter>
