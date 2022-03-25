@@ -8,13 +8,15 @@
     padding: 10px;
     position: relative;
   }
+
   .nav-active {
     &::after {
       content: "";
-      width: 85%;
+      position: absolute;
+      width: 100%;
       height: 5px;
       background: $color-1;
-      position: absolute;
+      border-radius: 4px;
       bottom: 1px;
       left: 50%;
       transform: translateX(-50%);
