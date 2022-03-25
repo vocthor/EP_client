@@ -1,0 +1,21 @@
+.bibli {
+  :root {
+    //Var a modifier pr gerer le zoom
+    --zoom-factor: 0.75;
+    --init-frame-height: 870px;
+    --init-frame-width: 1555px;
+
+    /* 
+        Pour recalibrer :
+        - mettre le zoom a 1,
+        - jouer avec --init-frame-height / width 
+        */
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+  }
+  height: calc(100px + var(--init-frame-height) * var(--zoom-factor));
+  width: calc(30px + var(--init-frame-width) * var(--zoom-factor));
+}

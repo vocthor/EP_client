@@ -32,6 +32,7 @@ const ModifCompte = () => {
   /* Fonction appelée lorsqu'on veut changer le prénom de quelqu'un */
   const changePrenom = () => {
     let valid = true;
+    //Appel au back
     Axios.post("http://localhost:3001/modifPrenom", {
       id: user.id,
       prenom: prenom,
@@ -49,7 +50,7 @@ const ModifCompte = () => {
       .then(() => {
         if (valid) {
           document.getElementById("prenom").value = "";
-          sessionStorage.removeItem("accessToken");
+          sessionStorage.removeItem("accessToken"); //déconnexion pour avoir un nouveau token avec les bonnes valeurs
         }
       });
   };
@@ -57,6 +58,7 @@ const ModifCompte = () => {
   /* Fonction appelée lorsqu'on veut changer le Nom de quelqu'un */
   const changeNom = () => {
     let valid = true;
+    //Appel au back
     Axios.post("http://localhost:3001/modifNom", {
       id: user.id,
       nom: nom,
@@ -74,7 +76,7 @@ const ModifCompte = () => {
       .then(() => {
         if (valid) {
           document.getElementById("nom").value = "";
-          sessionStorage.removeItem("accessToken");
+          sessionStorage.removeItem("accessToken"); //déconnexion pour avoir un nouveau token avec les bonnes valeurs
         }
       });
   };
@@ -82,6 +84,8 @@ const ModifCompte = () => {
   /* Fonction appelée lorsqu'on veut changer le pseudo de quelqu'un */
   const changePseudo = () => {
     let valid = true;
+    //Appel au back
+
     Axios.post("http://localhost:3001/modifPseudo", {
       id: user.id,
       pseudo: pseudo,
@@ -99,7 +103,7 @@ const ModifCompte = () => {
       .then(() => {
         if (valid) {
           document.getElementById("pseudo").value = "";
-          sessionStorage.removeItem("accessToken");
+          sessionStorage.removeItem("accessToken"); //déconnexion pour avoir un nouveau token avec les bonnes valeurs
         }
       });
   };
@@ -107,6 +111,8 @@ const ModifCompte = () => {
   /* Fonction appelée lorsqu'on veut changer l'adresse mail de quelqu'un */
   const changeEmail = () => {
     let valid = true;
+    //Appel au back
+
     Axios.post("http://localhost:3001/modifEmail", {
       id: user.id,
       nouvemail: email,
@@ -124,7 +130,7 @@ const ModifCompte = () => {
       .then(() => {
         if (valid) {
           document.getElementById("email").value = "";
-          sessionStorage.removeItem("accessToken");
+          sessionStorage.removeItem("accessToken"); //déconnexion pour avoir un nouveau token avec les bonnes valeurs
         }
       });
   };
@@ -134,36 +140,43 @@ const ModifCompte = () => {
       <div className="Form">
         <div className="FormRegister">
           <h1>Modifier vos données personnelles</h1>
-          <label>Prenom actuel : {user.prenom}</label>
-          <input
-            type="text"
-            id="prenom"
-            onChange={(e) => setPrenom(e.target.value)}
-          />
-          <button onClick={changePrenom}>Modifier</button>
-          <label>Nom actuel : {user.nom}</label>
-          <input
-            type="text"
-            id="nom"
-            onChange={(e) => setNom(e.target.value)}
-          />
-          <button onClick={changeNom}>Modifier</button>
 
-          <label>Pseudo ENT actuel : {user.pseudo}</label>
-          <input
-            type="text"
-            id="pseudo"
-            onChange={(e) => setPseudo(e.target.value)}
-          />
-          <button onClick={changePseudo}>Modifier</button>
-
-          <label>Email actuel : {user.email}</label>
-          <input
-            type="text"
-            id="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button onClick={changeEmail}>Modifier</button>
+          <div className="SousForm">
+            <label>Prenom actuel : {user.prenom}</label>
+            <input
+              type="text"
+              id="prenom"
+              onChange={(e) => setPrenom(e.target.value)}
+            />
+            <button onClick={changePrenom}>Modifier</button>
+          </div>
+          <div className="SousForm">
+            <label>Nom actuel : {user.nom}</label>
+            <input
+              type="text"
+              id="nom"
+              onChange={(e) => setNom(e.target.value)}
+            />
+            <button onClick={changeNom}>Modifier</button>
+          </div>
+          <div className="SousForm">
+            <label>Pseudo ENT actuel : {user.pseudo}</label>
+            <input
+              type="text"
+              id="pseudo"
+              onChange={(e) => setPseudo(e.target.value)}
+            />
+            <button onClick={changePseudo}>Modifier</button>
+          </div>
+          <div className="SousForm">
+            <label>Email actuel : {user.email}</label>
+            <input
+              type="text"
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <button onClick={changeEmail}>Modifier</button>
+          </div>
         </div>
       </div>
     </div>

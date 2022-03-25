@@ -16,6 +16,7 @@ const Compte = () => {
   par l'utilisateur dans les champs directement dans la base de données donc elle crée un utilisateur*/
   const addUser = () => {
     let valid = true;
+    //Appel au back
     Axios.post("http://localhost:3001/create", {
       id: id,
       prenom: prenom,

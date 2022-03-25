@@ -11,7 +11,7 @@ const SallesTP = () => {
   let items2 = [];
   let listeCours = [];
 
-  /* Lignes de la timeline */
+  /* Lignes de la timeline : les salles */
   const groups = [
     { id: 1, title: "INF-ECHIQUIER" },
     { id: 2, title: "INF-EAUX : 118" },
@@ -23,6 +23,7 @@ const SallesTP = () => {
     { id: 8, title: "INF-008 " },
   ];
 
+  //Récupère les données ADE au chargement
   useEffect(() => {
     RecupTPBack();
   }, []);
@@ -33,6 +34,7 @@ const SallesTP = () => {
     for (let i = 1; i < listeCours.length; i++) {
       ajout = new Object();
       ajout.id = i;
+      //Association à la bonne salle
       if (listeCours[i].location.includes("INF-ECHIQUIER")) ajout.group = 1;
       if (listeCours[i].location.includes("INF-EAUX")) ajout.group = 2;
       if (listeCours[i].location.includes("INF-PC3")) ajout.group = 3;
@@ -47,6 +49,7 @@ const SallesTP = () => {
       match = listeCours[i].dtstart.match(
         /^(\d{4})(\d\d)(\d\d)T(\d\d)(\d\d)(\d\d)/
       );
+      //Ajout de la date de début
       ajout.start_time = new Date(
         RegExp.$1,
         parseInt(RegExp.$2) - 1,
@@ -58,6 +61,7 @@ const SallesTP = () => {
       match = listeCours[i].dtend.match(
         /^(\d{4})(\d\d)(\d\d)T(\d\d)(\d\d)(\d\d)/
       );
+      //Ajout de la date de fin
       ajout.end_time = new Date(
         RegExp.$1,
         parseInt(RegExp.$2) - 1,
@@ -70,6 +74,7 @@ const SallesTP = () => {
     }
   };
 
+  //Récupère les données de ADE Campus : une liste d'objets qui comportent les noms des cours, les dates de débuts et fin et la salle associée
   const RecupTPBack = () => {
     Axios.post("http://localhost:3001/SallesTpLibres").then((res) => {
       if (res.data.error) {
@@ -84,11 +89,6 @@ const SallesTP = () => {
   return (
     <div className="SallesTP">
       <Navigation />
-      {/* <ul>
-        {salles.map((salle) => (
-          <SalleTP key={salle.nom} salle={salle} />
-        ))}
-      </ul> */}
       {
         <Timeline
           groups={groups}
@@ -98,7 +98,6 @@ const SallesTP = () => {
           sidebarWidth={180}
         />
       }
-      {/* <button onClick={RecupTPBack}> Recup Data Back </button> */}
     </div>
   );
 };
