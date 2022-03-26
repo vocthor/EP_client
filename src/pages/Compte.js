@@ -7,6 +7,7 @@ const Compte = () => {
   const [prenom, setPrenom] = useState("");
   const [pseudo, setPseudo] = useState("");
   const [id, setId] = useState("");
+  const [email, setEmail] = useState("");
   const [validFields, setValidFields] = useState(true);
   const [user, setUser] = useState({});
   let history = useHistory();
@@ -15,11 +16,13 @@ const Compte = () => {
   par l'utilisateur dans les champs directement dans la base de données donc elle crée un utilisateur*/
   const addUser = () => {
     let valid = true;
+    //Appel au back
     Axios.post("http://localhost:3001/create", {
       id: id,
       prenom: prenom,
       nom: nom,
       pseudo: pseudo,
+      email: email,
     })
       .then((res) => {
         if (res.data == "Invalid fields") {
@@ -35,6 +38,7 @@ const Compte = () => {
           document.getElementById("prenom").value = "";
           document.getElementById("nom").value = "";
           document.getElementById("pseudo").value = "";
+          document.getElementById("email").value = "";
           login();
         }
       });
@@ -131,6 +135,12 @@ const Compte = () => {
               type="text"
               id="pseudo"
               onChange={(e) => setPseudo(e.target.value)}
+            />
+            <label>Email:</label>
+            <input
+              type="text"
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <button onClick={addUser}>Valider</button>
             {validFields ? (

@@ -1,0 +1,33 @@
+.modifCompte {
+  .Form {
+    button:hover {
+      cursor: pointer;
+    }
+    button {
+      width: 150px;
+      height: 35px;
+      margin: 5px;
+    }
+    h1 {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+    }
+  }
+  .SousForm {
+    background-color: #f9f9f9;
+    width: 75%;
+    align-items: center;
+    justify-content: right;
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 3px 3px 3px 3px rgb(150, 149, 149);
+    border-radius: 30px;
+    input {
+      width: 30%;
+    }
+    button {
+      width: 20%;
+    }
+  }
+}

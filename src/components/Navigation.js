@@ -105,17 +105,21 @@ const Navigation = () => {
       <NavLink exact to="/annonces" activeClassName="nav-active">
         Annonces
       </NavLink>
+      <NavLink exact to="/bibli" activeClassName="nav-active">
+        Bibliothèque
+      </NavLink>
       {authState ? (
         <div className="Loginfo">
+          <NavLink exact to="/monCompte" activeClassName="nav-active">
+            Mon Compte
+          </NavLink>
           <h4>
             {prenom} {nom}
           </h4>
           <button onClick={logout}>Se déconnecter</button>
         </div>
       ) : (
-        <NavLink exact to="/compte" activeClassName="nav-active">
-          Se connecter
-        </NavLink>
+        ""
       )}
     </div>
   );
