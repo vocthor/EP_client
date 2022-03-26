@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Calendar from "../components/Calendar";
 import Navigation from "../components/Navigation";
 import Weather from "../components/Weather";
+import Transports from "../components/Transports";
 import Axios from "axios";
 
 const Home = ({}) => {
@@ -33,6 +34,7 @@ const Home = ({}) => {
       <Navigation />
       {authState ? <Calendar pseudo={pseudo} /> : ""}
       <Weather />
+      <Transports />
     </div>
   );
 };
