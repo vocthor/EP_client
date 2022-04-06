@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import Axios from "axios";
+import banList from "../components/annonces/banList";
 
 import "../styles/components/annonces.scss";
 
 export default function Annonces() {
-  // Var pr stocker le corps de l'annonce en train d'être rentrée
+  // Vars de l'annonce en train d'être rentrée
   const [input, setInput] = useState("");
   const [contact, setContact] = useState("");
   const [count, setCount] = useState(0);
+
   // Var pr stocker la liste des annonces
   const [annonceList, setAnnonceList] = useState([]);
 
   const [validFields, setValidFields] = useState(true);
+  const [errorBackEnd, setErrorBackEnd] = useState("");
 
   // Vars de l'authentification
   const [authState, setAuthState] = useState(false);
@@ -53,10 +56,14 @@ export default function Annonces() {
   const handleSubmit = (e) => {
     // Eviter le rechargement incessant
     e.preventDefault();
+    // Pre processing
+    let filteredInput = input;
+    filteredInput = insultFilter(filteredInput);                  // Enlever les insultes
+    filteredInput = filteredInput.replace(/\s+/g, " ").trim();    // Enlever les espaces
     // Objet contenant les caractéristiques de l'annonce
     const newAnnonce = {
       id: Math.round(Math.random() * 10080), //10080 = nb minute en 7 jours
-      text: input,
+      text: filteredInput,
       ownerID: id,
       ownerName: prenom + " " + nom,
       contact: contact,
@@ -66,6 +73,22 @@ export default function Annonces() {
     setInput("");
     setContact("");
     setCount(0);
+  };
+
+  /**
+   *  Fonction pour enlever les insultes
+   * @param {*} text
+   */
+  const insultFilter = (text) => {
+    let res = text;
+    banList.map((word) => {
+      let re = new RegExp(word, "ig");
+      if (res.match(re)) {
+        res = res.replaceAll(re, "*beep*");
+        // console.log("INSULTE DETECTEE : "+word);
+      }
+    });
+    return res;
   };
 
   /**
@@ -81,6 +104,7 @@ export default function Annonces() {
     })
       .then((res) => {
         console.log(res);
+        setErrorBackEnd(res.data);
         if (res.data !== "Invalid fields") {
           setValidFields(true);
         } else {
@@ -119,6 +143,7 @@ export default function Annonces() {
     })
       .then((res) => {
         console.log(res);
+        setErrorBackEnd(res.data);
         if (res.data !== "Invalid fields") {
           setValidFields(true);
         } else {
@@ -172,6 +197,7 @@ export default function Annonces() {
             Ajouter
           </button>
         </div>
+        <div className="annonce-error">{errorBackEnd}</div>
       </form>
 
       <div className="annonceList">

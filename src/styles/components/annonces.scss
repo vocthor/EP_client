@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: line;
     .annonce-input {
-      height: 150px;
+      height: 160px;
       width: 250px;
       border: 1px solid;
       border-radius: 5px;
@@ -23,7 +23,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      .annonce-count{
+      .annonce-count {
         margin-left: 15px;
       }
       .annonce-contact {
@@ -36,6 +36,13 @@
         position: absolute;
         bottom: 0px;
       }
+    }
+    .annonce-error {
+      justify-content: center;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 50px;
+      font-size: larger;
     }
   }
 
@@ -77,7 +84,7 @@
       }
       .annonceContact {
         position: absolute;
-        bottom : 5px;
+        bottom: 5px;
         left: 5px;
         font-style: italic;
       }
