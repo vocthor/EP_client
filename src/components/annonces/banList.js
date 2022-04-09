@@ -2444,7 +2444,7 @@ export default [
   "ar5e",
   "arrse",
   "arse",
-  "ass",
+  //"ass",
   "ass-fucker",
   "asses",
   "assfucker",

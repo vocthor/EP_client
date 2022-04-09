@@ -27,7 +27,19 @@
         margin-left: 15px;
       }
       .annonce-contact {
+        margin-top: 5px;
         margin-left: 15px;
+      }
+      .annonce-anon {
+        margin-top: 5px;
+        margin-left: 15px;
+        .anonBox {
+          transform: scale(1.5);
+        }
+        .anonLabel {
+          position: relative;
+          left: 7px;
+        }
       }
       .annonce-addButton {
         margin-left: 15px;
@@ -89,5 +101,35 @@
         font-style: italic;
       }
     }
+  }
+}
+
+.annonceConfirmationDelete {
+  padding: 15px;
+  position: relative;
+  .title {
+    text-align: center;
+  }
+  .par {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .buttonNo {
+    height: 75px;
+    width: 125px;
+    position: absolute;
+    left: 50px;
+    background-color: indianred;
+    border: 1px solid #282c34; // $color-3
+    border-radius: 10px;
+  }
+  .buttonYes {
+    height: 75px;
+    width: 125px;
+    position: absolute;
+    right: 50px;
+    background-color: rgb(88, 172, 88);
+    border: 1px solid #282c34; // $color-3
+    border-radius: 10px;
   }
 }
