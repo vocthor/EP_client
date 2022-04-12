@@ -25,6 +25,7 @@ export default function Annonces() {
   const [id, setId] = useState("");
   const [prenom, setPrenom] = useState("");
   const [nom, setNom] = useState("");
+  const [role, setRole] = useState("");
 
   // Connection
   useEffect(() => {
@@ -44,6 +45,7 @@ export default function Annonces() {
         setPrenom(res.data.prenom);
         setNom(res.data.nom);
         setId(res.data.id);
+        setRole(res.data.info);
       }
     });
   }, []);
@@ -125,21 +127,26 @@ export default function Annonces() {
    */
   const askBackEnd = () => {
     Axios.post("http://localhost:3001/retrieveAnnonces").then((res) => {
+      // console.log(res);
       const newList = res.data.map((e) => {
         let own = e["nom"] + " " + e["prenom"]; // en vrai faudrait peut etre faire ca côté backEnd.
         if (e["anon"]) own = "Anonymous";
         return {
           id: e["id_annonce"],
-          text: e["annonce"],
+          text: e["text_annonce"],
           ownerID: e["id_owner"],
           ownerName: own,
-          contact: e["contact"],
+          contact: e["contact_annonce"],
         };
       });
       setAnnonceList(newList);
     });
   };
-
+  
+  /**
+   * 
+   * @param {*} a 
+   */
   const confirmDelete = (a) => {
     confirmAlert({
       customUI: ({ onClose }) => {
@@ -174,7 +181,7 @@ export default function Annonces() {
   const deleteAnnonce = (annonce) => {
     Axios.post("http://localhost:3001/deleteAnnonce", {
       id_annonce: annonce.id,
-      id_owner: annonce.ownerID,
+      id_owner: id,
     })
       .then((res) => {
         console.log(res);
@@ -250,7 +257,7 @@ export default function Annonces() {
             <div className="annonceOwnerName">{a.ownerName}</div>
             <div className="annonceText">{a.text}</div>
             <div className="annonceDelete">
-              {a.ownerID === id ? (
+              {(a.ownerID === id) || (role==="admin") || (role==="moderator") ? (
                 <button onClick={() => confirmDelete(a)}>Supprimer</button>
               ) : (
                 ""
