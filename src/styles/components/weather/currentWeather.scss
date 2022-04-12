@@ -1,12 +1,15 @@
+$color-1: #8d81fd;
+$color-2: #f9f9ed;
+
 .currentWeather {
-  margin: 0px auto;
-  background-color: #c8dbfe;
+  margin: 10px;
+  background-color: $color-1;
   padding: 8px;
   border-radius: 20px;
 }
 
 .hourCards {
-  margin: 0px auto;
+  margin: 10px;
   display: flex;
   flex-direction: row;
   flex: 1;

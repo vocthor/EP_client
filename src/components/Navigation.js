@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
+import Admin from "../pages/AdminGestion";
 
 const Navigation = () => {
   const [authState, setAuthState] = useState(false);
   const [id, setId] = useState("");
   const [prenom, setPrenom] = useState("");
   const [nom, setNom] = useState("");
+  const [role, setRole] = useState("");
   let history = useHistory();
 
   /*  Fonction qui permets de supprimer le token associée au compte connecté, donc permets de 
@@ -39,6 +41,7 @@ const Navigation = () => {
           setPrenom(res.data.prenom);
           setNom(res.data.nom);
           setId(res.data.id);
+          setRole(res.data.role);
           setTimeout(logout, 600000);
         }
       })
@@ -105,21 +108,29 @@ const Navigation = () => {
       {authState ? (
         <NavLink exact to="/annonces" activeClassName="nav-active">
           Annonces
+      </NavLink>) : "" }
+      <NavLink exact to="/bibli" activeClassName="nav-active">
+        Bibliothèque
+      </NavLink>
+      {role == "admin" ? (
+        <NavLink exact to="/admin" activeClassName="nav-active">
+          Admin
         </NavLink>
       ) : (
         ""
       )}
       {authState ? (
         <div className="Loginfo">
+          <NavLink exact to="/monCompte" activeClassName="nav-active">
+            Mon Compte
+          </NavLink>
           <h4>
             {prenom} {nom}
           </h4>
           <button onClick={logout}>Se déconnecter</button>
         </div>
       ) : (
-        <NavLink exact to="/compte" activeClassName="nav-active">
-          Se connecter
-        </NavLink>
+        ""
       )}
     </div>
   );

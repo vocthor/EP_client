@@ -13,6 +13,7 @@
     "react": "^17.0.2",
     "react-confirm-alert": "^2.8.0",
     "react-custom-confirm-alert": "^2.0.7",
+    "react-calendar-timeline": "^0.27.0",
     "react-dom": "^17.0.2",
     "react-native": "^0.66.4",
     "react-native-cli": "^2.0.1",
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-error-overlay": "^6.0.9"
   }
 }
