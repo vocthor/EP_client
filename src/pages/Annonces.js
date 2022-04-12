@@ -45,7 +45,7 @@ export default function Annonces() {
         setPrenom(res.data.prenom);
         setNom(res.data.nom);
         setId(res.data.id);
-        setRole(res.data.info);
+        setRole(res.data.role);
       }
     });
   }, []);
@@ -64,7 +64,10 @@ export default function Annonces() {
     // Pre processing
     let filteredInput = input;
     filteredInput = insultFilter(filteredInput); // Enlever les insultes
-    filteredInput = filteredInput.replace(/\s+/g, " ").trim(); // Enlever les espaces
+    filteredInput = filteredInput.replace(/\s+/g, " ").trim(); // Enlever les espaceslet filteredInput = input;
+    let filteredContact = contact;
+    filteredContact = insultFilter(filteredContact); // Enlever les insultes
+    filteredContact = filteredContact.replace(/\s+/g, " ").trim(); // Enlever les espaces
     // Objet contenant les caractéristiques de l'annonce
     const newAnnonce = {
       id: Math.round(Math.random() * 10080), //10080 = nb minute en 7 jours
@@ -72,7 +75,7 @@ export default function Annonces() {
       ownerID: id,
       ownerName: prenom + " " + nom,
       anon: anon,
-      contact: contact,
+      contact: filteredContact,
     };
     // On rajoute l'annonce à la liste, puis on RaZ l'input
     sendToBackEnd(newAnnonce);
@@ -142,10 +145,10 @@ export default function Annonces() {
       setAnnonceList(newList);
     });
   };
-  
+
   /**
-   * 
-   * @param {*} a 
+   * Fonction pour afficher une alerte de confirmation de la suppression
+   * @param {*} a annonce à supprimer
    */
   const confirmDelete = (a) => {
     confirmAlert({
@@ -176,12 +179,13 @@ export default function Annonces() {
 
   /**
    * Fonction pour supprimer une annonce si on en est le propriétaire
-   * @param {*} annonce
+   * @param {*} annonce annonce à supprimer
    */
   const deleteAnnonce = (annonce) => {
     Axios.post("http://localhost:3001/deleteAnnonce", {
       id_annonce: annonce.id,
-      id_owner: id,
+      id_logged: id,
+      role: role,
     })
       .then((res) => {
         console.log(res);
@@ -198,12 +202,13 @@ export default function Annonces() {
   /* Si l'utilisateur n'est pas connecté mais est quand-même arrivé sur cette pages, on le lui dis gentiment.*/
   if (!authState) {
     return (
-      <div>
+      <div className="lost">
         <Navigation />
         <h1>
           Vous vous êtes perdu, vous n'êtes pas censé être ici sans vous être
           connecté !
         </h1>
+        <img className="img_lost" src="../../lost.gif" />
       </div>
     );
   }
@@ -257,7 +262,7 @@ export default function Annonces() {
             <div className="annonceOwnerName">{a.ownerName}</div>
             <div className="annonceText">{a.text}</div>
             <div className="annonceDelete">
-              {(a.ownerID === id) || (role==="admin") || (role==="moderator") ? (
+              {a.ownerID === id || role === "admin" || role === "moderator" ? (
                 <button onClick={() => confirmDelete(a)}>Supprimer</button>
               ) : (
                 ""

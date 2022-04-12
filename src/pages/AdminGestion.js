@@ -38,6 +38,20 @@ const Admin = () => {
     });
   };
 
+
+  if (user.role != "admin"){
+    return (
+      <div className="notAdmin">
+        <Navigation />
+        <h1>
+          Essayez plutôt de soudoyer un admin, ça sera plus rapide !
+        </h1>
+        <img className="img_lost" src="../../lost.gif"/>
+      </div>
+    );
+  };
+
+
   return (
     <div className="admin">
       <Navigation />
