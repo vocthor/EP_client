@@ -15,15 +15,17 @@
 
     img{
         height: 580px;
-        border: 5px solid black;
+        border: 3px solid black;
     }
     .bat1{
         background: transparent;
         // border: none;
         border-color: red;
         position : absolute;
-        top: 63%;
-        left : 31%;
+        // top: 63%;
+        // left : 31%;
+        top: 430px;
+        left : 394px;
         width: 32px;
         height: 59px;
     }
@@ -32,8 +34,10 @@
         // border: none;
         border-color: red;
         position : absolute;
-        top: 48%;
-        left : 32%;
+        // top: 48%;
+        // left : 32%;
+        top: 328px;
+        left: 406px;
         width: 20px;
         height: 102px;
     }
@@ -42,30 +46,301 @@
         // border: none;
         border-color: red;
         position : absolute;
-        top: 56%;
-        left : 34.5%;
-        width: 30px;
+        // top: 56%;
+        // left : 34.5%;
+        top: 379px;
+        left: 440px;
+        width: 28px;
         height: 54px;
+    }
+    .bat4{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 68%;
+        // left : 34.75%;
+        top: 462px;
+        left: 443px;
+        width: 48px;
+        height: 28px;
+    }
+    .bat5{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 61%;
+        // left : 25%;
+        top: 415px;
+        left: 318px;
+        width: 77px;
+        height: 35px;
+    }
+    .bat6{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 54%;
+        // left : 24%;
+        top: 367px;
+        left: 305px;
+        width: 90px;
+        height: 32px;
+    }
+    .bat7{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 45%;
+        // left : 24.25%;
+        top: 307px;
+        left: 307px;
+        width: 90px;
+        height: 40px;
+    }
+    .bat8{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 32.5%;
+        // left : 41%;
+        top: 220px;
+        left : 522px;
+        width: 15px;
+        height: 22px;
+    }
+    .bat9{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 38%;
+        // left : 24.25%;
+        top: 257px;
+        left: 308px;
+        width: 115px;
+        height: 40px;
+    }
+    .bat10{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 38.25%;
+        // left : 36.75%;
+        top: 258px;
+        left: 466px;
+        width: 83px;
+        height: 20px;
+    }
+    .bat11{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 47.5%;
+        // left : 34.5%;
+        top: 322px;
+        left: 440px;
+        width: 84px;
+        height: 20px;
+    }
+    .bat12{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 65.75%;
+        // left : 16%;
+        top: 531px;
+        left: 200px;
+        width: 58px;
+        height: 50px;
+    }
+    .bat13{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 54%;
+        // left : 24%;
+        top: 352px;
+        left: 145px;
+        width: 124px;
+        height: 30px;
+    }
+    .bat14{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 54%;
+        // left : 24%;
+        top: 275px;
+        left: 118px;
+        width: 124px;
+        height: 30px;
+    }
+    .bat15{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 54%;
+        // left : 24%;
+        top: 197px;
+        left: 90px;
+        width: 124px;
+        height: 30px;
+    }
+    .bat16{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 54%;
+        // left : 24%;
+        top: 255px;
+        left: 210px;
+        width: 84px;
+        height: 21px;
+        transform: rotate(12deg);
     }
     .bat17{
         background: transparent;
         // border: none;
         border-color: red;
         position : absolute;
-        top: 66%;
-        left : 16%;
+        // top: 65.75%;
+        // left : 16%;
+        top: 446px;
+        left: 202px;
         width: 57px;
-        height: 50px;
+        height: 52px;
+    }
+    .bat18{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 56%;
+        // left : 34.5%;
+        top: 357px;
+        left: 501px;
+        width: 23px;
+        height: 64px;
+    }
+    .bat19{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 47.5%;
+        // left : 34.5%;
+        top: 351px;
+        left: 461px;
+        width: 40px;
+        height: 18px;
+    }
+    .bat20{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 32.5%;
+        // left : 41%;
+        top: 225px;
+        left : 473px;
+        width: 17px;
+        height: 17px;
+    }
+    .bat21{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 32.5%;
+        // left : 41%;
+        top: 225px;
+        left : 439px;
+        width: 15px;
+        height: 12px;
+    }
+    .bat22{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 32.5%;
+        // left : 41%;
+        top: 225px;
+        left : 498px;
+        width: 16px;
+        height: 17px;
     }
     .bat23{
         background: transparent;
         // border: none;
         border-color: red;
         position : absolute;
-        top: 61%;
-        left : 20%;
-        width: 45px;
-        height: 30px;
+        // top: 61%;
+        // left : 20%;
+        top: 418px;
+        left: 258px;
+        width: 36px;
+        height: 26px;
+    }
+    .bat24{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 32.5%;
+        // left : 41%;
+        top: 227px;
+        left : 250px;
+        width: 20px;
+        height: 17px;
+    }
+    .busINSA{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 65.75%;
+        // left : 16%;
+        top: 492px;
+        left: 550px;
+        width: 98px;
+        height: 36px;
+    }
+    .busRU{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 65.75%;
+        // left : 16%;
+        top: 606px;
+        left: 218px;
+        width: 76px;
+        height: 37px;
+    }
+    .busIUT{
+        background: transparent;
+        // border: none;
+        border-color: red;
+        position : absolute;
+        // top: 32.5%;
+        // left : 41%;
+        top: 143px;
+        left : 17px;
+        width: 23px;
+        height: 25px;
     }
     
     
