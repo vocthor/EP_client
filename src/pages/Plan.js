@@ -21,7 +21,13 @@ const About = () => {
   return (
     <div className="plan">
       <Navigation />
-      <img src="../../plan_insa.jpg" alt="Plan de l'insa" height="850" />
+      <img
+        className="plan_insa"
+        src="../../plan_insa.jpg"
+        alt="Plan de l'insa"
+      />
+      <img className="lgd1" src="../../ep_legende1.jpg" alt="Légende 1" />
+      <img className="lgd2" src="../../ep_legende2.jpg" alt="Légende 2" />
       <div className="infos">
         <p>Cliquez sur un bâtiment pour afficher ses informations.</p>
         <p id="info"></p>
