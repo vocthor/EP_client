@@ -1,0 +1,33 @@
+{
+    "batiment" : {
+        "1":"Acceuil\nDirection\nAdministration",
+        "2":"Départements STPI et MA\nImprimerie\nEspace santé\n Laboratoire IRMAR-INSA",
+        "3":"Amphithéâtres A, B et C",
+        "4":"Amphithéâtre D\nCafétéria",
+        "5":"Centre multimédia (CRI)\nAmphithéâtre André Bonin",
+        "6":"Départements SRC et Humanités\nLaboratoire IETR-INSA",
+        "7":"Amphithéâtre GCU\nDépartement GCU\nLaboratoire GCGM\nPlate-Forme Technologique (PFT)\nGénie Civil & Mécanique (GCM)",
+        "8":"Aucune info :(",
+        "9":"Plate-Forme Technologique (PFT)\nGénie Civil & Mécanique (GCM)\nCentre Commun de Mécanique\nAtelier Service Technique Immobilier",
+        "10":"Départements EII et SGM\nLaboratoires FOTON-INSA IETR-INSA",
+        "11":"Département GMA\nLaboratoires ISCR/CM-INSA et ISCR/CSM-INSA",
+        "12":"Restaurant INSA",
+        "13":"Résidence ARZ\nService Technique Immobilier",
+        "14":"Résidence BREHAT\nAcceuil hébergement",
+        "15":"Résidence CEZEMBRE\nLocaux Ouest INSA - Junior Entreprise",
+        "16":"Résidence LES GLENANS\nSalle de musculation\nLocaux Lab'INSA et INS'India",
+        "17":"Halle Francis Querné",
+        "18":"Département INFO\nLaboratoire IRISA-INSA\nVous pouvez voir la disponibilité des salles dans l'onglet 'Salles de TP'",
+        "19":"Bibliothèque\nVous pouvez réserver une salle d'étude dans l'onglet 'Bibliothèque'.",
+        "20":"Espaces verts",
+        "21":"Aucune info :(",
+        "22":"Serres",
+        "23":"Cafétéria étudiants et Foyer",
+        "24":"Villa du directeur\nLocaux des start-up"
+    },
+    "bus" : {
+        "Beaulieu - INSA":" desservi par les lignes :\nC4\n31\n32\n35\n40\n41ex\nN1",
+        "Beaulieu - RU":" desservi par les lignes :\nC4\n14\n31\n32\n35\n40\n41ex\n64\nN1\n200",
+        "IUT":" desservi par les lignes :\nC4\n14\n32\n35\n40\nN1\n216"
+    }
+}
