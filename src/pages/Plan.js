@@ -26,163 +26,163 @@ const About = () => {
         <p id="info"></p>
       </div>
       <button
-        className="bat1"
+        className="btn bat1"
         onClick={() => {
           info("batiment", 1);
         }}
       ></button>
       <button
-        className="bat2"
+        className="btn bat2"
         onClick={() => {
           info("batiment", 2);
         }}
       ></button>
       <button
-        className="bat3"
+        className="btn bat3"
         onClick={() => {
           info("batiment", 3);
         }}
       ></button>
       <button
-        className="bat4"
+        className="btn bat4"
         onClick={() => {
           info("batiment", 4);
         }}
       ></button>
       <button
-        className="bat5"
+        className="btn bat5"
         onClick={() => {
           info("batiment", 5);
         }}
       ></button>
       <button
-        className="bat6"
+        className="btn bat6"
         onClick={() => {
           info("batiment", 6);
         }}
       ></button>
       <button
-        className="bat7"
+        className="btn bat7"
         onClick={() => {
           info("batiment", 7);
         }}
       ></button>
       <button
-        className="bat8"
+        className="btn bat8"
         onClick={() => {
           info("batiment", 8);
         }}
       ></button>
       <button
-        className="bat9"
+        className="btn bat9"
         onClick={() => {
           info("batiment", 9);
         }}
       ></button>
       <button
-        className="bat10"
+        className="btn bat10"
         onClick={() => {
           info("batiment", 10);
         }}
       ></button>
       <button
-        className="bat11"
+        className="btn bat11"
         onClick={() => {
           info("batiment", 11);
         }}
       ></button>
       <button
-        className="bat12"
+        className="btn bat12"
         onClick={() => {
           info("batiment", 12);
         }}
       ></button>
       <button
-        className="bat13"
+        className="btn bat13"
         onClick={() => {
           info("batiment", 13);
         }}
       ></button>
       <button
-        className="bat14"
+        className="btn bat14"
         onClick={() => {
           info("batiment", 14);
         }}
       ></button>
       <button
-        className="bat15"
+        className="btn bat15"
         onClick={() => {
           info("batiment", 15);
         }}
       ></button>
       <button
-        className="bat16"
+        className="btn bat16"
         onClick={() => {
           info("batiment", 16);
         }}
       ></button>
       <button
-        className="bat17"
+        className="btn bat17"
         onClick={() => {
           info("batiment", 17);
         }}
       ></button>
       <button
-        className="bat18"
+        className="btn bat18"
         onClick={() => {
           info("batiment", 18);
         }}
       ></button>
       <button
-        className="bat19"
+        className="btn bat19"
         onClick={() => {
           info("batiment", 19);
         }}
       ></button>
       <button
-        className="bat20"
+        className="btn bat20"
         onClick={() => {
           info("batiment", 20);
         }}
       ></button>
       <button
-        className="bat21"
+        className="btn bat21"
         onClick={() => {
           info("batiment", 21);
         }}
       ></button>
       <button
-        className="bat22"
+        className="btn bat22"
         onClick={() => {
           info("batiment", 22);
         }}
       ></button>
       <button
-        className="bat23"
+        className="btn bat23"
         onClick={() => {
           info("batiment", 23);
         }}
       ></button>
       <button
-        className="bat24"
+        className="btn bat24"
         onClick={() => {
           info("batiment", 24);
         }}
       ></button>
       <button
-        className="busINSA"
+        className="btn busINSA"
         onClick={() => {
           info("bus", "Beaulieu - INSA");
         }}
       ></button>
       <button
-        className="busRU"
+        className="btn busRU"
         onClick={() => {
           info("bus", "Beaulieu - RU");
         }}
       ></button>
       <button
-        className="busIUT"
+        className="btn busIUT"
         onClick={() => {
           info("bus", "IUT");
         }}
