@@ -54,7 +54,7 @@ const SallesTP = () => {
         RegExp.$1,
         parseInt(RegExp.$2) - 1,
         RegExp.$3,
-        parseInt(RegExp.$4) + 1,
+        parseInt(RegExp.$4) + 2,
         RegExp.$5,
         RegExp.$6
       );
@@ -66,7 +66,7 @@ const SallesTP = () => {
         RegExp.$1,
         parseInt(RegExp.$2) - 1,
         RegExp.$3,
-        parseInt(RegExp.$4) + 1,
+        parseInt(RegExp.$4) + 2,
         RegExp.$5,
         RegExp.$6
       );
