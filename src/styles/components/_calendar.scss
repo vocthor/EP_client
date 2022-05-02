@@ -1,9 +1,8 @@
-
-:root{
+:root {
   //Var a modifier pr gerer le zoom
   --zoom-factor: 0.75;
-  --init-frame-height : 870px;
-  --init-frame-width : 1555px;
+  --init-frame-height: 870px;
+  --init-frame-width: 1555px;
 
   /* 
   Pour recalibrer :
@@ -15,11 +14,11 @@
 .calendar {
   padding: 10px;
   margin: 20px;
-  border: 3px solid $color-3;
+  box-shadow: 3px 3px 3px 3px rgb(150, 149, 149);
   border-radius: 30px;
   height: calc(100px + var(--init-frame-height) * var(--zoom-factor));
   width: calc(30px + var(--init-frame-width) * var(--zoom-factor));
-  background-color: white;
+  background-color: #f9f9f9;
   h1 {
     text-align: center;
     margin-bottom: 10px;

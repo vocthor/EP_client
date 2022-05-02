@@ -1,0 +1,32 @@
+.user {
+    background-color: #f9f9f9;
+    width: 75%;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 3px 3px 3px 3px rgb(150, 149, 149);
+    border-radius: 30px;
+
+    button {
+      height:80%;
+      margin: 3px;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+    .roleUser{
+      display: flex;
+      flex-direction: column;
+
+      right :30%;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .userInfo{
+      margin:40px
+    }
+}

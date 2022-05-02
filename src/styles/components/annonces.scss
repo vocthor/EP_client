@@ -1,0 +1,144 @@
+// PB : J'ARRIVE PAS A IMPORT LES VAR
+
+.annonces {
+  justify-content: center;
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .annonce-form {
+    display: flex;
+    flex-direction: line;
+    .annonce-input {
+      height: 160px;
+      width: 250px;
+      border: 1px solid;
+      border-radius: 5px;
+      box-sizing: border-box;
+      padding: 5px;
+      resize: none;
+    }
+    .annonce-truc {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .annonce-count {
+        margin-left: 15px;
+      }
+      .annonce-contact {
+        margin-top: 5px;
+        margin-left: 15px;
+      }
+      .annonce-anon {
+        margin-top: 5px;
+        margin-left: 15px;
+        .anonBox {
+          transform: scale(1.5);
+        }
+        .anonLabel {
+          position: relative;
+          left: 7px;
+        }
+      }
+      .annonce-addButton {
+        margin-left: 15px;
+        height: 50px;
+        width: 100px;
+        position: absolute;
+        bottom: 0px;
+      }
+    }
+    .annonce-error {
+      justify-content: center;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 50px;
+      font-size: larger;
+    }
+  }
+
+  .annonceList {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(5, minmax(250px, 1fr)); //merci Internet
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: 3px solid #282c34; // $color-3
+    border-radius: 30px;
+    height: auto;
+    width: 1336px; //trouvé a la mano
+    background-color: white;
+
+    .annonce {
+      position: relative;
+      padding: 5px;
+      background-color: #c8dbfe;
+      height: 250px;
+      width: 250px;
+      margin-right: 10px;
+      border-radius: 10px;
+
+      .annonceOwnerName {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .annonceText {
+        margin-left: 2px;
+      }
+      .annonceDelete {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        z-index: 1; // Mettre au 1° plan
+      }
+      .annonceContact {
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.annonceConfirmationDelete {
+  padding: 15px;
+  position: relative;
+  .title {
+    text-align: center;
+  }
+  .par {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .buttonNo {
+    height: 75px;
+    width: 125px;
+    position: absolute;
+    left: 50px;
+    background-color: indianred;
+    border: 1px solid #282c34; // $color-3
+    border-radius: 10px;
+  }
+  .buttonYes {
+    height: 75px;
+    width: 125px;
+    position: absolute;
+    right: 50px;
+    background-color: rgb(88, 172, 88);
+    border: 1px solid #282c34; // $color-3
+    border-radius: 10px;
+  }
+}
+
+.lost {
+  justify-content: center;
+  .img_lost {
+    height: 500px;
+    width: 500px;
+    align-self: center;
+  }
+}

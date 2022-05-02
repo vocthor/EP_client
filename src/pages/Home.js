@@ -3,6 +3,7 @@ import Calendar from "../components/Calendar";
 import Navigation from "../components/Navigation";
 import Weather from "../components/Weather";
 import Transports from "../components/Transports";
+import Ephemeride from "../components/ephemeride/Ephemeride";
 import Axios from "axios";
 
 const Home = ({}) => {
@@ -32,6 +33,7 @@ const Home = ({}) => {
   return (
     <div className="home">
       <Navigation />
+      <Ephemeride />
       {authState ? <Calendar pseudo={pseudo} /> : ""}
       <Weather />
       <Transports />

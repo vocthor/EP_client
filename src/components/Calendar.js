@@ -12,7 +12,7 @@ Il n'est pas possible de redimensionner automatiquement le iframe selon son cont
   return (
     <div className="calendar">
       <h1>Emploi du temps</h1>
-      <iframe className="IframeADE" src={URL} scrolling="no" />
+      <iframe className="IframeADE" src={URL} scrolling="no" frameBorder="0" />
     </div>
   );
 }
