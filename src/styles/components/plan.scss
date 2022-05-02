@@ -1,0 +1,261 @@
+.plan{
+    position: relative;
+    width: 100%;
+
+    .infos{
+        position : absolute;
+        // top : 13%;
+        // left : 60%;
+        top: 95px;
+        left: 700px;
+        height: 580px;
+        width: 300px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 5px;
+        font-size: small;
+    }
+
+    .plan_insa{
+        height: 580px;
+        border: 3px solid black;
+    }
+    .lgd1{
+        position: absolute;
+        top: 490px;
+        left : 710px; 
+        height: 80px;
+    }
+    .lgd2{
+        position: absolute;
+        top: 570px;
+        left : 710px; 
+        height: 80px;
+    }
+    .btn{
+        // border-color: red;
+        border: none;
+        background: none;
+        position : absolute;
+    }
+    .bat1{
+        // top: 63%;
+        // left : 31%;
+        top: 430px;
+        left : 394px;
+        width: 32px;
+        height: 59px;
+    }
+    .bat2{
+        // top: 48%;
+        // left : 32%;
+        top: 328px;
+        left: 406px;
+        width: 20px;
+        height: 102px;
+    }
+    .bat3{
+        // top: 56%;
+        // left : 34.5%;
+        top: 379px;
+        left: 440px;
+        width: 28px;
+        height: 54px;
+    }
+    .bat4{
+        // top: 68%;
+        // left : 34.75%;
+        top: 462px;
+        left: 443px;
+        width: 48px;
+        height: 28px;
+    }
+    .bat5{
+        // top: 61%;
+        // left : 25%;
+        top: 415px;
+        left: 318px;
+        width: 77px;
+        height: 35px;
+    }
+    .bat6{
+        // top: 54%;
+        // left : 24%;
+        top: 367px;
+        left: 305px;
+        width: 90px;
+        height: 32px;
+    }
+    .bat7{
+        // top: 45%;
+        // left : 24.25%;
+        top: 307px;
+        left: 307px;
+        width: 90px;
+        height: 40px;
+    }
+    .bat8{
+        // top: 32.5%;
+        // left : 41%;
+        top: 220px;
+        left : 523px;
+        width: 14px;
+        height: 22px;
+    }
+    .bat9{
+        // top: 38%;
+        // left : 24.25%;
+        top: 257px;
+        left: 308px;
+        width: 115px;
+        height: 40px;
+    }
+    .bat10{
+        // top: 38.25%;
+        // left : 36.75%;
+        top: 258px;
+        left: 466px;
+        width: 83px;
+        height: 20px;
+    }
+    .bat11{
+        // top: 47.5%;
+        // left : 34.5%;
+        top: 322px;
+        left: 440px;
+        width: 84px;
+        height: 20px;
+    }
+    .bat12{
+        // top: 65.75%;
+        // left : 16%;
+        top: 531px;
+        left: 200px;
+        width: 58px;
+        height: 50px;
+    }
+    .bat13{
+        // top: 54%;
+        // left : 24%;
+        top: 352px;
+        left: 145px;
+        width: 124px;
+        height: 30px;
+    }
+    .bat14{
+        // top: 54%;
+        // left : 24%;
+        top: 275px;
+        left: 118px;
+        width: 124px;
+        height: 30px;
+    }
+    .bat15{
+        // top: 54%;
+        // left : 24%;
+        top: 197px;
+        left: 90px;
+        width: 124px;
+        height: 30px;
+    }
+    .bat16{
+        // top: 54%;
+        // left : 24%;
+        top: 255px;
+        left: 210px;
+        width: 84px;
+        height: 21px;
+        transform: rotate(12deg);
+    }
+    .bat17{
+        // top: 65.75%;
+        // left : 16%;
+        top: 446px;
+        left: 202px;
+        width: 57px;
+        height: 52px;
+    }
+    .bat18{
+        // top: 56%;
+        // left : 34.5%;
+        top: 357px;
+        left: 501px;
+        width: 23px;
+        height: 64px;
+    }
+    .bat19{
+        // top: 47.5%;
+        // left : 34.5%;
+        top: 351px;
+        left: 461px;
+        width: 40px;
+        height: 18px;
+    }
+    .bat20{
+        // top: 32.5%;
+        // left : 41%;
+        top: 225px;
+        left : 473px;
+        width: 17px;
+        height: 17px;
+    }
+    .bat21{
+        // top: 32.5%;
+        // left : 41%;
+        top: 225px;
+        left : 439px;
+        width: 15px;
+        height: 12px;
+    }
+    .bat22{
+        // top: 32.5%;
+        // left : 41%;
+        top: 225px;
+        left : 498px;
+        width: 16px;
+        height: 17px;
+    }
+    .bat23{
+        // top: 61%;
+        // left : 20%;
+        top: 418px;
+        left: 258px;
+        width: 36px;
+        height: 26px;
+    }
+    .bat24{
+        // top: 32.5%;
+        // left : 41%;
+        top: 227px;
+        left : 250px;
+        width: 20px;
+        height: 17px;
+    }
+    .busINSA{
+        // top: 65.75%;
+        // left : 16%;
+        top: 492px;
+        left: 550px;
+        width: 98px;
+        height: 36px;
+    }
+    .busRU{
+        // top: 65.75%;
+        // left : 16%;
+        top: 606px;
+        left: 218px;
+        width: 76px;
+        height: 37px;
+    }
+    .busIUT{
+        // top: 32.5%;
+        // left : 41%;
+        top: 143px;
+        left : 17px;
+        width: 23px;
+        height: 25px;
+    }
+    
+    
+}
+
