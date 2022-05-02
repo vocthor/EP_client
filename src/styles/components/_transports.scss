@@ -1,0 +1,18 @@
+.transports {
+  padding: 10px;
+  margin: 20px;
+  box-shadow: 3px 3px 3px 3px rgb(150, 149, 149);
+  border-radius: 30px;
+  height: 350px;
+  width: 900px;
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+.rowarret {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
