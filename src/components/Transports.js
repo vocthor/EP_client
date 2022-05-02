@@ -13,36 +13,38 @@ const Transports = () => {
 
   //Var pr stocker les valeurs de l API
   const [resultatapi1, setResultatAPI1] = useState();
+  // let resultatapi1 = undefined;
   const [resultatapi2, setResultatAPI2] = useState();
   const [resultatapi3, setResultatAPI3] = useState();
 
-  useEffect(
-    () => {
-      /**
-       * Fonction pr aller chercher l'API.
-       * Stocke le resultat dans resultatAPI.
-       */
-      const fetchTransport = async () => {
-        try {
-          const res = await axios.get(URLAPI1);
-          setResultatAPI1(res.data);
-          const res2 = await axios.get(URLAPI2);
-          setResultatAPI2(res2.data);
-          const res3 = await axios.get(URLAPI3);
-          setResultatAPI3(res3.data);
-          setLoading(false);
-        } catch (err) {
-          // faudra mieux catch les erreurs
-          console.error(err);
-        }
-      };
+  useEffect(() => {
+    /**
+     * Fonction pr aller chercher l'API.
+     * Stocke le resultat dans resultatAPI.
+     */
+    const fetchTransport = async () => {
+      try {
+        const res = await axios.get(URLAPI1);
+        // resultatapi1 = res.data;
 
-      fetchTransport();
-    },
-    [
-      //Condition de changement pr MaJ
-    ]
-  );
+        setResultatAPI1(res.data);
+        console.log(resultatapi1);
+        const res2 = await axios.get(URLAPI2);
+        setResultatAPI2(res2.data);
+        const res3 = await axios.get(URLAPI3);
+        setResultatAPI3(res3.data);
+        setLoading(false);
+      } catch (err) {
+        // faudra mieux catch les erreurs
+        console.error(err);
+      }
+    };
+
+    fetchTransport();
+  }, [
+    loading,
+    //Condition de changement pr MaJ
+  ]);
   // .then(function (res) {
   //   return res.records;
   // });
@@ -58,7 +60,7 @@ const Transports = () => {
       </div>
     );
   }
-
+  console.log(resultatapi1);
   return (
     <div className="transports">
       <h1>Transport</h1>

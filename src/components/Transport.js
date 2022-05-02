@@ -4,10 +4,9 @@ const Transport = ({ data }) => {
   //Tableau pr stocker le temps des (48) prochaines heures
   const [donnees, setDonnees] = useState([]);
 
-  const [filtered, setFiltered] = useState([]);
-
   useEffect(
     () => {
+      console.log(data);
       const currentData = data?.map((f) => {
         let filtered1 = [];
         filtered1 = f?.record.fields.depart.match(/T(\d\d):(\d\d):(\d\d)/);
@@ -22,10 +21,6 @@ const Transport = ({ data }) => {
       });
       console.log(currentData);
 
-      // currentData?.forEach((element) => {
-
-      // });
-      // setFiltered(filtered1);
       let bababab = currentData.slice(0, 10);
       console.log(bababab);
       setDonnees(bababab);
