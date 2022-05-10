@@ -42,7 +42,7 @@ const Navigation = () => {
           setNom(res.data.nom);
           setId(res.data.id);
           setRole(res.data.role);
-          setTimeout(logout, 600000);
+          setTimeout(logout, 240000);
         }
       })
       .then(() => {
